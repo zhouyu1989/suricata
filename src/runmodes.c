@@ -36,6 +36,7 @@
 #include "conf.h"
 #include "queue.h"
 #include "runmodes.h"
+#include "runmode-dpdk.h"
 #include "util-unittest.h"
 #include "util-misc.h"
 #include "util-plugin.h"
@@ -158,6 +159,12 @@ static const char *RunModeTranslateModeToName(int runmode)
 #else
             return "WINDIVERT(DISABLED)";
 #endif
+        case RUNMODE_DPDK:
+#ifdef HAVE_DPDK
+            return "DPDK";
+#else
+            return "DPDK(DISABLED)";
+#endif
         default:
             FatalError(SC_ERR_UNKNOWN_RUN_MODE, "Unknown runtime mode. Aborting");
     }
@@ -229,6 +236,7 @@ void RunModeRegisterRunModes(void)
     RunModeIdsNflogRegister();
     RunModeUnixSocketRegister();
     RunModeIpsWinDivertRegister();
+    RunModeDpdkRegister();
 #ifdef UNITTESTS
     UtRunModeRegister();
 #endif
@@ -349,6 +357,11 @@ void RunModeDispatch(int runmode, const char *custom_mode,
 #ifdef WINDIVERT
             case RUNMODE_WINDIVERT:
                 custom_mode = RunModeIpsWinDivertGetDefaultMode();
+                break;
+#endif
+#ifdef HAVE_DPDK
+            case RUNMODE_DPDK:
+                custom_mode = RunModeDpdkGetDefaultMode();
                 break;
 #endif
             default:

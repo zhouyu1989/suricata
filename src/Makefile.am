@@ -410,6 +410,7 @@ reputation.c reputation.h \
 respond-reject.c respond-reject.h \
 respond-reject-libnet11.h respond-reject-libnet11.c \
 runmode-af-packet.c runmode-af-packet.h \
+runmode-dpdk.c runmode-dpdk.h \
 runmode-erf-dag.c runmode-erf-dag.h \
 runmode-erf-file.c runmode-erf-file.h \
 runmode-ipfw.c runmode-ipfw.h \
@@ -427,6 +428,7 @@ runmodes.c runmodes.h \
 rust.h \
 rust-context.c rust-context.h \
 source-af-packet.c source-af-packet.h \
+source-dpdk.c source-dpdk.h \
 source-erf-dag.c source-erf-dag.h \
 source-erf-file.c source-erf-file.h \
 source-ipfw.c source-ipfw.h \
@@ -478,7 +480,9 @@ util-daemon.c util-daemon.h \
 util-debug.c util-debug.h \
 util-debug-filters.c util-debug-filters.h \
 util-decode-mime.c util-decode-mime.h \
+util-dpdk.c util-dpdk.h \
 util-detect.c util-detect.h \
+util-dpdk-ixgbe.c util-dpdk-ixgbe.h \
 util-device.c util-device.h \
 util-ebpf.c util-ebpf.h \
 util-enum.c util-enum.h \
