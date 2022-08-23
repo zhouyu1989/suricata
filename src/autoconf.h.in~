@@ -76,9 +76,6 @@
 /* Define to 1 if you have the <dlfcn.h> header file. */
 #undef HAVE_DLFCN_H
 
-/* (DPDK support enabled) */
-#undef HAVE_DPDK
-
 /* Define to 1 if you have the `dup2' function. */
 #undef HAVE_DUP2
 
@@ -491,10 +488,10 @@
 /* Define to 1 if you have the <string.h> header file. */
 #undef HAVE_STRING_H
 
-/* STRLCAT is predefined by DPDK 20.11+ */
+/* Define to 1 if you have the `strlcat' function. */
 #undef HAVE_STRLCAT
 
-/* STRLCPY is predefined by DPDK 20.11+ */
+/* Define to 1 if you have the `strlcpy' function. */
 #undef HAVE_STRLCPY
 
 /* Define to 1 if you have the `strncasecmp' function. */
@@ -637,8 +634,7 @@
 /* Enable FreeBSD IPFW support for inline IDP */
 #undef IPFW
 
-/* Define to the sub-directory in which libtool stores uninstalled libraries.
-   */
+/* Define to the sub-directory where libtool stores uninstalled libraries. */
 #undef LT_OBJDIR
 
 /* (Napatech flowdirector support) */
